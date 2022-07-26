@@ -1,4 +1,6 @@
 class Pessoa: # nome de classe tem que começar com letra maiscula se for mais de uma palavra a posteior também começa com letra maiscula ex: class PessoaCadastro:
+    olhos = 2 # Atributo de Classe
+
     def __init__(self, *filhos, nome=None, idade=35):
         self.idade = idade
         self.nome = nome
@@ -19,5 +21,12 @@ if __name__ == '__main__':
         print(filho.nome)
     luciano.sobrenome = 'Ramanho'
     del luciano.filhos
+    luciano.olhos = 1
+    del luciano.olhos
     print(luciano.__dict__)
     print(renzo.__dict__)
+    Pessoa.olhos = 3
+    print(Pessoa.olhos)
+    print(luciano.olhos)
+    print(renzo.olhos)
+    print(id(Pessoa.olhos), id(luciano.olhos), id(renzo.olhos))
